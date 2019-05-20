@@ -33,6 +33,7 @@ socket.on("you_were_hit", function(x, y) {
     div.style.width = +(1 * mapSize) + "px";
     div.style.height = +(1 * mapSize) + "px";
     div.classList.add("hit");
+    div.innerHTML = `You were hit on:  ${x} , ${y}`;
     shipsContainer.appendChild(div);
   });
 

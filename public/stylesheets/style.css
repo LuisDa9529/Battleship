@@ -89,7 +89,7 @@ input[type=text]{
 
 .hit {
   position: absolute;
-  background: rgb(252, 10, 10);
+  background: red;
   border-radius: 20px;
   box-shadow: 0px 3px 2px 3px rgba(221, 8, 8, 0.575);
   margin-left: -20px;
