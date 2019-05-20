@@ -33,7 +33,7 @@ socket.on("you_were_hit", function(x, y) {
     div.style.width = +(1 * mapSize) + "px";
     div.style.height = +(1 * mapSize) + "px";
     div.classList.add("hit");
-    //div.innerHTML = `You were hit on:  ${x} , ${y}`;
+    // div.innerHTML = `You were hit on:  ${x} , ${y}`;
     shipsContainer.appendChild(div);
   });
 
@@ -50,6 +50,7 @@ nameButton.addEventListener('click', function(){
 socket.on('playerNamed', function(id){
     console.log(`frontend: the player now has this id: ${id}.`);
     localStorage.setItem('socket.id', id);
+    location.reload();
 });
 
 if (localStorage.getItem('socket.id')) {
@@ -77,6 +78,7 @@ socket.on('here is your player', function(player){
         shipsContainer.appendChild(div);
     });
     ships = player.ships;
+    
 });
 
 socket.on('here is the size', function(size){
