@@ -55,10 +55,11 @@ module.exports = function(io) {
         let x = parseInt(params.coords.x);
         let y = parseInt(params.coords.y);
         let bombResult = Battleship.dropBomb(params.id, x, y);
-        socket.emit('wasHit', bombResult);
+        socket.emit('wasHit', bombResult);        
         console.log('bombResult'); console.log(bombResult);
         bombResult.forEach((bombSuccess) => {
           console.log('shipHit!');
+          socket.broadcast.emit("you_were_hit", x, y);
           socket.broadcast.emit('shipHit', {
             by: Battleship.getPlayer(params.id).getName(),
             bomb: bombSuccess
