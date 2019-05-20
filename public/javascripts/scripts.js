@@ -88,14 +88,14 @@ socket.on('player with same name', function(){
     console.log(`frontend: choose a different name`);
 });
 
-var resetButton = document.getElementById('reset');
-resetButton.addEventListener('click', function(){
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', `/battleship/reset`, true);
-    xhr.send();
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            console.log('finished.', xhr.responseText);
-        }
-    }
-});
+// var resetButton = document.getElementById('reset');
+// resetButton.addEventListener('click', function(){
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('POST', `/battleship/reset`, true);
+//     xhr.send();
+//     xhr.onload = function() {
+//         if (xhr.status === 200) {
+//             console.log('finished.', xhr.responseText);
+//         }
+//     }
+// });
