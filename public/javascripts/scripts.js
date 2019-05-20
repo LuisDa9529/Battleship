@@ -24,6 +24,18 @@ socket.on('shipHit', function(hit){
     console.log(`your ship ${ship.name} were hit by ${hit.by}`);
 });
 
+socket.on("you_were_hit", function(x, y) {
+    console.log(`You were hit on:  ${x} , ${y}`);
+    const shipsContainer = document.getElementById("ships");
+    var div = document.createElement("div");
+    div.style.top = +(y * mapSize) + "px";
+    div.style.left = +(x * mapSize) + "px";
+    div.style.width = +(1 * mapSize) + "px";
+    div.style.height = +(1 * mapSize) + "px";
+    div.classList.add("hit");
+    shipsContainer.appendChild(div);
+  });
+
 socket.on('playerCreated', function(id){
     console.log(`frontend: a new player has been created with this id: ${id}.`);
 });
